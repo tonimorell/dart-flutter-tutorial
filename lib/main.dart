@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/screens/basics.dart';
+import 'package:flutter_tutorial/screens/future_builder.dart';
 import 'package:flutter_tutorial/screens/layout.dart';
 import 'package:flutter_tutorial/screens/widget_state.dart';
 
@@ -8,17 +9,20 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
         '/basics': (context) => BasicsPage(),
-        '/layout': (context) => LayoutPage(),
-        '/widget-state': (context) => WidgetStatePage()
+        '/layout': (context) => const LayoutPage(),
+        '/widget-state': (context) => const WidgetStatePage(),
+        '/future-builder': (context) => const FutureBuilderPage()
       },
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Hello Flutter"),
+          title: const Text("Hello Flutter"),
         ),
         body: Builder(builder: (context) {
           return Column(
@@ -27,19 +31,25 @@ class MyApp extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/basics');
                 },
-                child: Text("Basics"),
+                child: const Text("Basics"),
               ),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/layout');
                 },
-                child: Text("Layout"),
+                child: const Text("Layout"),
               ),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/widget-state');
                 },
-                child: Text("Widget State"),
+                child: const Text("Widget State"),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/future-builder');
+                },
+                child: const Text("Future Builder"),
               )
             ],
           );

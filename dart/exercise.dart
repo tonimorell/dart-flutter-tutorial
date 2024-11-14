@@ -46,8 +46,8 @@ List<NetworkElement> combineAndSort(List<NetworkElement> list1, List<NetworkElem
 }
 void main() {
   List<NetworkElement> sortedList = combineAndSort(listOne, listTwo, false, 'volume');
-  sortedList.forEach((element) {
+  for (var element in sortedList) {
     print('ID: ${element.id}, Volume: ${element.volume}, Name: ${element.name}');
     // print(element.toString());
-  });
+  }
 }

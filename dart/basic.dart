@@ -1,5 +1,5 @@
 var name = "Flutter Dev"; // Type inferred as String
-final age = 25; // Immutable variable
+const age = 25; // Immutable variable
 const PI = 3.14; // Compile-time constant
 
 int count = 5;

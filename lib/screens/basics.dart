@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class BasicsPage extends StatelessWidget {
+  const BasicsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Basics'),
+        title: const Text('Flutter Basics'),
       ),
       body: Center(
         child: Column(
@@ -24,7 +26,7 @@ class BasicsPage extends StatelessWidget {
               loadingBuilder: (context, child, loadingProgress) {
                 return loadingProgress == null
                     ? child
-                    : CircularProgressIndicator();
+                    : const CircularProgressIndicator();
               },
             ),
             const SizedBox(height: 16),
@@ -32,7 +34,7 @@ class BasicsPage extends StatelessWidget {
               onPressed: () {
                 print('Button clicked!');
               },
-              child: Text('Click me'),
+              child: const Text('Click me'),
             ),
             const SizedBox(height: 16),
           ],

@@ -7,7 +7,7 @@ class LayoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Layout'),
+        title: const Text('Flutter Layout'),
       ),
       body: Center(
         child: Container(
