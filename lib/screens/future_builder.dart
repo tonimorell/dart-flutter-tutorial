@@ -33,6 +33,7 @@ class FutureBuilderPage extends StatelessWidget {
 
   Future<List<Character>> getGokuCharacters() async {
     try {
+      await Future.delayed(const Duration(seconds: 2));
       final Uri url = Uri.parse('https://dragonball-api.com/api/characters');
       final response = await http.get(url);
 
@@ -55,6 +56,7 @@ class FutureBuilderPage extends StatelessWidget {
         title: const Text('Dragon Ball Characters'),
       ),
       body: FutureBuilder<List<Character>>(
+        key: const Key('future_builder_key'),
         future: getGokuCharacters(),
         builder:
             (BuildContext context, AsyncSnapshot<List<Character>> snapshot) {
@@ -76,14 +78,15 @@ class FutureBuilderPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Error: ${snapshot.error}',
+                    'Error: ${snapshot.error ?? 'Unknown error'}',
                     textAlign: TextAlign.center,
                     style: const TextStyle(color: Colors.red),
                   ),
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {
-                      // Force a rebuild of the widget
+                      // Very interesting way to force a rebuild of the widget but unusefull for stateless widgets, this is not retry again the future builder
+                      // We might use a StatefulWidget to control the retry and lifecycle
                       (context as Element).markNeedsBuild();
                     },
                     child: const Text('Retry'),

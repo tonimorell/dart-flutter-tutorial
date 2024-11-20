@@ -11,7 +11,6 @@ class LayoutPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          color: Colors.grey[200],
           padding: const EdgeInsets.all(16),
           child: const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,6 +20,10 @@ class LayoutPage extends StatelessWidget {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8),
+              Text(
+                'Row',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -29,7 +32,11 @@ class LayoutPage extends StatelessWidget {
                   Text('Item 3'),
                 ],
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 40),
+              Text(
+                'Column',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -39,6 +46,19 @@ class LayoutPage extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: Text('Aligned to the right'),
                   ),
+                  SizedBox(height: 8),
+                  Text(
+                    'Aligned to the center??',
+                    textAlign: TextAlign.center,
+                  ),
+                  // SizedBox(height: 8),
+                  // SizedBox(
+                  //   width: double.infinity,
+                  //   child: Text(
+                  //     'Aligned to the center, yess',
+                  //     textAlign: TextAlign.center,
+                  //   ),
+                  // )
                 ],
               ),
             ],
