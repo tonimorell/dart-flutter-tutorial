@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         '/widget-state': (context) => const WidgetStatePage(),
         '/future-builder': (context) => const FutureBuilderPage(),
         '/hero': (context) => const HeroPage(),
-        '/cubit': (context) => const CubitPage()
+        '/cubit': (context) => const NotificationsPage()
       },
       home: const HomePage(),
     );
