@@ -30,7 +30,7 @@ class BasicsPage extends StatelessWidget {
               },
             ),
             const SizedBox(height: 16),
-            TextButton(
+            ElevatedButton(
               onPressed: () {
                 print('Button clicked!');
               },

@@ -8,7 +8,10 @@ class NotificationsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const NotificationsView();
+    return BlocProvider(
+      create: (context) => NotificationsCubit(),
+      child: const NotificationsView(),
+    );
   }
 }
 
