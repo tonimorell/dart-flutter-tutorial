@@ -115,7 +115,10 @@ class HeroPage extends StatelessWidget {
                       ),
                     );
                   },
-                  leading: Image.network(character.image),
+                  leading: Hero(
+                    tag: character.name,
+                    child: Image.network(character.image),
+                  ),
                   title: Text(
                     character.name,
                     style: const TextStyle(
@@ -158,15 +161,17 @@ class CharacterDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              height: 300,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(character.image),
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
+            Hero(
+                tag: character.name,
+                child: Container(
+                  height: 300,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(character.image),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                )),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
