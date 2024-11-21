@@ -22,17 +22,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        '/basics': (context) => const BasicsPage(),
-        '/layout': (context) => const LayoutPage(),
-        '/widget-state': (context) => const WidgetStatePage(),
-        '/future-builder': (context) => const FutureBuilderPage(),
-        '/hero': (context) => const HeroPage(),
-        '/cubit': (context) => const NotificationsPage()
-      },
-      home: const HomePage(),
-    );
+    return BlocProvider(
+        create: (context) => NotificationsCubit(),
+        child: MaterialApp(
+          routes: {
+            '/basics': (context) => const BasicsPage(),
+            '/layout': (context) => const LayoutPage(),
+            '/widget-state': (context) => const WidgetStatePage(),
+            '/future-builder': (context) => const FutureBuilderPage(),
+            '/hero': (context) => const HeroPage(),
+            '/cubit': (context) => const NotificationsPage()
+          },
+          home: const HomePage(),
+        ));
   }
 }
 
