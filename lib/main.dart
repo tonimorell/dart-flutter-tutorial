@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tutorial/cubit/notifications_cubit.dart';
 import 'package:flutter_tutorial/screens/basics.dart';
 import 'package:flutter_tutorial/screens/cubit.dart';
 import 'package:flutter_tutorial/screens/future_builder.dart';
@@ -21,16 +23,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: {
-        '/basics': (context) => const BasicsPage(),
-        '/layout': (context) => const LayoutPage(),
-        '/widget-state': (context) => const WidgetStatePage(),
-        '/future-builder': (context) => const FutureBuilderPage(),
-        '/hero': (context) => const HeroPage(),
-        '/cubit': (context) => const NotificationsPage()
-      },
-      home: const HomePage(),
-    );
+          routes: {
+            '/basics': (context) => const BasicsPage(),
+            '/layout': (context) => const LayoutPage(),
+            '/widget-state': (context) => const WidgetStatePage(),
+            '/future-builder': (context) => const FutureBuilderPage(),
+            '/hero': (context) => const HeroPage(),
+            '/cubit': (context) => const NotificationsPage()
+          },
+          home: const HomePage(),
+        ));
   }
 }
 

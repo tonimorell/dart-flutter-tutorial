@@ -8,10 +8,7 @@ class NotificationsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => NotificationsCubit(),
-      child: const NotificationsView(),
-    );
+    return const NotificationsView();
   }
 }
 
@@ -47,9 +44,7 @@ class NotificationsView extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: ElevatedButton.icon(
               onPressed: () {
-                // Get the current timestamp for the notification
                 final timestamp = DateTime.now();
-                // Add a new notification using the cubit
                 context.read<NotificationsCubit>().addNotification(
                       'New notification at ${timestamp.hour}:${timestamp.minute}:${timestamp.second}',
                     );

@@ -51,12 +51,6 @@ class _CounterWidgetState extends State<CounterWidget> {
   }
 
   @override
-  void didUpdateWidget(CounterWidget oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    print('CounterWidget: didUpdateWidget called'); // Lifecycle demonstration
-  }
-
-  @override
   void dispose() {
     print('CounterWidget: dispose called'); // Lifecycle demonstration
     super.dispose();

@@ -47,18 +47,13 @@ class LayoutPage extends StatelessWidget {
                     child: Text('Aligned to the right'),
                   ),
                   SizedBox(height: 8),
-                  Text(
-                    'Aligned to the center??',
-                    textAlign: TextAlign.center,
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      'Aligned to the center??',
+                      textAlign: TextAlign.right,
+                    ),
                   ),
-                  // SizedBox(height: 8),
-                  // SizedBox(
-                  //   width: double.infinity,
-                  //   child: Text(
-                  //     'Aligned to the center, yess',
-                  //     textAlign: TextAlign.center,
-                  //   ),
-                  // )
                 ],
               ),
             ],
